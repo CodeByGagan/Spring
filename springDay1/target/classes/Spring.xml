@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        https://www.springframework.org/schema/context/spring-context.xsd">
+
+	<!-- <bean class="amber.noida.springDay1.AmberStudent1" id="amberstudent1"> 
+		</bean> <bean class="amber.noida.springDay1.AmberStudent2" id="amberstudent2"> 
+		</bean> -->
+
+	<!-- Setter Injection using DI -->
+	<!--
+	<bean class="amber.noida.springDay1.Address" id="address">
+		<property name="city">
+			<value>Delhi</value>
+		</property>
+		<property name="state">
+			<value>Delhi</value>
+		</property>
+		<property name="country">
+			<value>India</value>
+		</property>
+		<property name="pincode">
+			<value>110011</value>
+		</property>
+	</bean>
+
+	 Setter Injection
+	
+	<bean class="amber.noida.springDay1.NewEmp" id="newEmp">
+
+		<property name="id">
+			<value>20</value>
+		</property>
+
+		<property name="name">
+			<value>Rohan</value>
+		</property>
+
+		<property name="add" ref="address">
+			
+		</property>
+
+		<property name="phoneList">
+			<list>
+				<value>9876543210</value>
+				<value>9876453210</value>
+				<value>9878043210</value>
+				<value>9876543210</value>
+				<value>9876543210</value>
+			</list>
+		</property>
+		
+		<property name="markSet">
+			<set>
+				<value>98</value>
+				<value>97</value>
+				<value>100</value>
+				<value>33</value>
+				<value>78</value>
+			</set>
+		</property>
+		
+		<property name="courseMap">
+			<map>
+				 <entry key="jjfsd">
+					 <value>Java</value>
+				 </entry>
+				 <entry key="aws">
+					 <value>AWS</value>
+				 </entry>
+			</map>
+		</property>
+
+	</bean>
+	 -->
+	 
+	 
+	 
+	 <!-- Constructor injection -->
+	 
+	 <bean class="amber.noida.springDay1.Address" id="address">
+	 	<constructor-arg value="New-Delhi" name="city"></constructor-arg>
+	 	<constructor-arg value="Delhi" name="state"></constructor-arg>
+	 	<constructor-arg value="India" name="country"></constructor-arg>
+	 	<constructor-arg value="110042" type="int" name="pincode"></constructor-arg>
+	 </bean>
+	 
+	<bean class="amber.noida.springDay1.NewEmp" id="newEmp">
+		<constructor-arg value="1" type="int" name="id"></constructor-arg>  
+		<constructor-arg value="UP" name="name"></constructor-arg>  
+		<constructor-arg name="phoneList">
+			<list>
+				<value>9876543210</value>
+				<value>9876453210</value>
+				<value>9878043210</value>
+				<value>9876543210</value>
+				<value>9876543210</value>
+			</list>
+		</constructor-arg>
+		<constructor-arg name="markSet">
+			<list>
+				<value>98</value>
+				<value>10</value>
+				<value>97</value>
+				<value>58</value>
+				<value>74</value>
+			</list>
+		</constructor-arg>
+		<constructor-arg name="courseMap">
+			<map>
+				 <entry key="jjfsd" value="Java">
+				 </entry>
+				 <entry key="aws" value="Spring">
+				 </entry>
+			</map>
+		</constructor-arg>
+		<constructor-arg >
+			<ref bean="address"></ref >
+		</constructor-arg>
+		
+	</bean>
+	
+
+
+</beans>
+
